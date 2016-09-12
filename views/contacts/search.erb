@@ -1,0 +1,13 @@
+<h2>Search results</h2>
+
+<% @search_results.each do |search_result| %>
+  <% @contacts.each_with_index do |contact, i| %>
+    <% return i if contact[:name] == search_result[:name] %>
+  <% end %>
+  <h3><a href="/contacts/<%= i %>"><%= search_result[:name] %></a></h3>
+<% end %>
+
+<p>
+  <button><a href="/contacts/new">New</a></button>
+  <button><a href="/contacts">Index</a></button>
+</p>
